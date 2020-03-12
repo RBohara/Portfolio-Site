@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section id="contact-section">
+    <form action="" method="POST">
+     {{ form.hidden_tag() }}
+     <fieldset>
+       <legend>Contact Me</legend>
+       {{ form.fullname.label }}
+       {{ form.fullname }}
+
+       {{ form.email.label }}
+       {{ form.email }}
+
+       {{ form.message.label }}
+       {{ form.message }}
+
+       {{ form.submit }}
+     </fieldset>
+    </form>
+  </section>
+  {% endblock %}

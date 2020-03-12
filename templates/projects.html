@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <section id="projects-section">      
+    {% for project in projects %}
+        <p>{{ project.screenshot }}</p>
+        <h1>{{ project.title }}</h1>
+        <p>{{ project.technologies }}</p>
+        <p>{{ project.description }}</p>
+        <p>{{ project.github_link }}</p>
+    {% endfor %}
+  </section>
+{% endblock %}

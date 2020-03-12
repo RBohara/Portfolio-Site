@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% if title %}
+            <title>{{ title }} | Portfolio</title>
+        {% else %}
+            <title>Rahul | Portfolio</title>
+        {% endif %}
+    </head>
+    <body style="background-color: lightgray;">
+        
+        <header>
+            <h1>Rahul <span style="color: maroon;">Bohara</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact Me</a></li>
+                </ul>
+            </nav>
+          </header>
+
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+          {% endwith %}
+        
+            
+        {% block content %} {% endblock %}
+
+        <footer>
+            <p>Copyright 2020. Rahul Bohara</p>
+        </footer>
+    </body>
+</html>
